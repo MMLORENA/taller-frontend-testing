@@ -32,4 +32,9 @@ Cuando la cantidad es igual al stock disponible, se muestra un mensaje de `Sold 
 Los botones de `Remove` y `Add` se deshabilitan:
 
 - **Remove**: cuando la cantidad es igual a 0.
-- **Add**: cuando el stock es igual a 0. 
+- **Add**: cuando el stock es igual a 0.
+
+#### Archivo a editar en la kata 👇:
+
+- [Product Card Test](../../../src/katas/kata-1/ProductCard.test.tsx)
+
