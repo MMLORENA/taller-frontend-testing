@@ -1,22 +1,16 @@
 import { ProductCard } from "../../katas/kata-1/ProductCard/ProductCard.tsx";
 import { BackNavigation } from "../../components/BackLink/BackNavigation.tsx";
-import "./FirstKataPage.css";
+import { KataHeader } from "../../components/KataHeader/KataHeader.tsx";
 
 export const FirstKataPage = () => {
   return (
     <>
       <BackNavigation />
-      <header className="header">
-        <h2>
-          Kata 1: Utiliza las queries apropiadas de Testing Library y los
-          matchers de jest-dom
-        </h2>
-        <span>
-          ℹ️ Encontrarás el enunciado de la kata en:{" "}
-          <span className="italic">📂 src → katas → kata-1 → README.md</span>
-        </span>
-      </header>
-      <hr className="divider"></hr>
+      <KataHeader
+        kataNumber={1}
+        title="Utiliza las queries apropiadas de Testing Library y los matchers de jest-dom"
+        instructionsPath="kata-1 → README.md"
+      />
       <ProductCard
         initialQuantity={1}
         stock={2}
