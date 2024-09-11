@@ -1,4 +1,6 @@
 import "./KatasPage.css";
+import { NavLink } from "react-router-dom";
+import { paths } from "../../config/paths.ts";
 
 export const KatasPage = () => {
   return (
@@ -21,6 +23,13 @@ export const KatasPage = () => {
           height={128}
         />
       </div>
+      <ul className="links">
+        <li>
+          <NavLink to={paths.firstKata} className="link">
+            Kata 1
+          </NavLink>
+        </li>
+      </ul>
     </>
   );
 };

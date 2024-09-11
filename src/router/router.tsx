@@ -1,13 +1,9 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import App from "../App/App.tsx";
 import { KatasPage } from "../pages/KatasPage/KatasPage.tsx";
+import { paths } from "../config/paths.ts";
 
-const paths = {
-  root: "/",
-  katas: "/katas",
-};
-
-export const router = createBrowserRouter([
+const routes: RouteObject[] = [
   {
     path: paths.root,
     element: <App />,
@@ -22,4 +18,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routes);
