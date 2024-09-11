@@ -1,5 +1,6 @@
 import { BackNavigation } from "../../components/BackLink/BackNavigation.tsx";
 import { KataHeader } from "../../components/KataHeader/KataHeader.tsx";
+import DropdownComponent from "../../katas/kata-3/DropDown/DropDown.tsx";
 
 export const ThirdKataPage = () => {
   return (
@@ -7,9 +8,10 @@ export const ThirdKataPage = () => {
       <BackNavigation />
       <KataHeader
         kataNumber={3}
-        title="Diferencia entre userEvent vs fireEvent"
+        title="Diferencias entre userEvent vs fireEvent"
         instructionsPath="kata-3 → README.md"
       />
+      <DropdownComponent />
     </>
   );
 };

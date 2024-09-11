@@ -1,0 +1,13 @@
+.drop-down {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.drop-down__button {
+  min-width: fit-content;
+}
+
+.drop-down__select {
+  width: 100%;
+}
