@@ -5,13 +5,15 @@ export const KatasPage = () => {
   return (
     <>
       <h2>Listado de Katas: </h2>
-      <ul className="links">
-        <li>
-          <NavLink to={paths.firstKata} className="link">
-            Kata 1
-          </NavLink>
-        </li>
-      </ul>
+      <nav>
+        <ul className="links">
+          <li>
+            <NavLink to={paths.firstKata} className="link">
+              Kata 1
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };

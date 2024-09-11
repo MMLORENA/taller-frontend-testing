@@ -21,6 +21,10 @@ const routes: RouteObject[] = [
         path: paths.firstKata,
         element: <FirstKataPage />,
       },
+      {
+        path: "/product/*",
+        element: <Navigate to={paths.firstKata} />,
+      },
     ],
   },
 ];
