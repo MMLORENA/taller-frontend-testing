@@ -4,6 +4,7 @@ import { KatasPage } from "../pages/KatasPage/KatasPage.tsx";
 import { paths } from "../config/paths.ts";
 import { FirstKataPage } from "../pages/FirstKataPage/FirstKataPage.tsx";
 import { SecondKataPage } from "../pages/SecondKataPage/SecondKataPage.tsx";
+import { ThirdKataPage } from "../pages/ThirdKataPage/ThirdKataPage.tsx";
 
 const routes: RouteObject[] = [
   {
@@ -25,6 +26,10 @@ const routes: RouteObject[] = [
       {
         path: paths.secondKata,
         element: <SecondKataPage />,
+      },
+      {
+        path: paths.thirdKata,
+        element: <ThirdKataPage />,
       },
       {
         path: "/product/*",
