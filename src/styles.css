@@ -1,9 +1,18 @@
+:root {
+  --color-main-black: #000;
+  --color-accent-light: #b3b3f1;
+  --color-accent-dark: #858ae3;
+  --color-base-light: #d1d1dc;
+  --color-base-dark: #8a8a8a;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--color-main-black);
 }
 
 body {
@@ -13,30 +22,30 @@ body {
 
 button {
   background-color: transparent;
-  color: black;
-  border: 2px solid #b3b3f1;
+  color: inherit;
+  border: 2px solid var(--color-accent-light);
   border-radius: 4px;
   padding: 10px 15px;
   font-size: 0.9rem;
   cursor: pointer;
 
   &:disabled {
-    background-color: #d1d1dc;
-    color: #8a8a8a;
-    border: 2px solid #d1d1dc;
+    background-color: var(--color-base-light);
+    color: var(--color-base-dark);
+    border: 2px solid var(--color-base-light);
     cursor: not-allowed;
   }
 
   &:hover:not(:disabled) {
-    background-color: #858ae3;
-    border: 2px solid #858ae3;
+    background-color: var(--color-accent-dark);
+    border: 2px solid var(--color-accent-dark);
   }
 }
 
 select {
   background-color: transparent;
-  color: black;
-  border: 2px solid #b3b3f1;
+  color: inherit;
+  border: 2px solid var(--color-accent-light);
   border-radius: 4px;
   padding: 10px 15px;
   font-size: 0.9rem;
@@ -44,11 +53,11 @@ select {
 
   &:hover {
     background-color: #f5f5ff;
-    border: 2px solid #858ae3;
+    border: 2px solid var(--color-accent-dark);
   }
 
   &:focus {
-    border-color: #858ae3;
+    border-color: var(--color-accent-dark);
     box-shadow: 0 0 0 3px rgba(133, 138, 227, 0.4);
   }
 }
