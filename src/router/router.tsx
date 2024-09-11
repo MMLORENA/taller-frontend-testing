@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import App from "../App/App.tsx";
+import App from "../components/App/App.tsx";
 import { KatasPage } from "../pages/KatasPage/KatasPage.tsx";
 import { paths } from "../config/paths.ts";
 import { FirstKataPage } from "../pages/FirstKataPage/FirstKataPage.tsx";
