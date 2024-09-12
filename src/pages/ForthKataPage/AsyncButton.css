@@ -1,0 +1,16 @@
+.async-button__container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.async-button__data {
+  font-size: 1.2rem;
+  color: var(--color-accent-dark);
+}
+
+.async-button__reset {
+  background-color: var(--color-accent-light);
+  min-width: 90px;
+}
