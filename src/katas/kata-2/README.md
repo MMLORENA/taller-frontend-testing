@@ -23,7 +23,9 @@ describe("And the user clicks on the 'Add' button", () => {
 });
 ```
 
-Utiliza `userEvent` para testear la interacción del usuario.
+#### 🔎 Pista:
+
+[Documentación userEvent](https://testing-library.com/docs/user-event/intro#writing-tests-with-userevent)
 
 #### Archivo a editar en la kata 👇:
 
