@@ -4,4 +4,5 @@ export const paths = {
   firstKata: "/kata-1",
   secondKata: "/kata-2",
   thirdKata: "/kata-3",
+  forthKata: "/kata-4",
 };

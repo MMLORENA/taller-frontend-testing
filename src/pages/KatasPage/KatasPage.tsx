@@ -23,6 +23,11 @@ export const KatasPage = () => {
               Kata 3
             </NavLink>
           </li>
+          <li>
+            <NavLink to={paths.forthKata} className="link">
+              Kata 4
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </>
