@@ -8,7 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest run src/components/App/",
+    "test:kata-1": "vitest run src/katas/kata-1/",
+    "test:kata-2": "vitest run src/katas/kata-2/",
+    "test:kata-3": "vitest run src/katas/kata-3/",
+    "test:kata-4": "vitest run src/katas/kata-4/"
   },
   "dependencies": {
     "react": "^18.3.1",

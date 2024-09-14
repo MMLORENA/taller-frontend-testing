@@ -2,8 +2,8 @@
 
 ## INTRODUCCIÓN
 
-Este ejercicio es para practicar las queries de Testing Library y los matchers de jest-dom. Acabamos de hablar del
-orden recomendado para usar las queries de Testing Library basados en la accesibilidad.
+Este ejercicio es para practicar las queries de Testing Library y los matchers de jest-dom. Acabamos de hablar del orden
+recomendado para usar las queries de Testing Library basados en la accesibilidad.
 
 El ejercicio consiste en corregir la suite de test de `ProductCard` basado en la explicación que acabamos de dar.
 

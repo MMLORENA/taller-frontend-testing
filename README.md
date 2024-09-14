@@ -34,3 +34,10 @@ npm test
 ```
 npm start
 ```
+
+## Scripts ejecutar test en el taller:
+
+- Kata 1: `npm run test:kata-1`
+- Kata 2: `npm run test:kata-2`
+- Kata 3: `npm run test:kata-3`
+- Kata 4: `npm run test:kata-4`
