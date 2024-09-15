@@ -21,6 +21,7 @@ describe("ProductCard ", () => {
     render(
       <ProductCard initialQuantity={4} stock={5} productName="Product23456" />,
     );
+
     const link = screen.getByTestId("product-detail-link");
     expect(link).toHaveTextContent("Product Detail");
     expect(screen.getByText("Product Detail")).toHaveAttribute(

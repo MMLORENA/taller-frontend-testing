@@ -2,14 +2,14 @@ import { render, screen } from "@testing-library/react";
 import { ProductCard } from "../ProductCard/ProductCard.tsx";
 
 describe("Given a ProductCard component", () => {
-  const mockProductName = "Product";
+  const mockProductName = "Pulpo a la Gallega";
   const soldOutText = /Sold out/i;
 
   describe("When it receives 'Product Name 1', quantity 4 and stock 5 ", () => {
     const initialQuantity = 4;
     const stock = 5;
 
-    test("Then user should see 'Product name'", () => {
+    test("Then user should see 'Pulpo a la Gallega' product name", () => {
       render(
         <ProductCard
           initialQuantity={initialQuantity}
@@ -26,8 +26,8 @@ describe("Given a ProductCard component", () => {
     });
 
     test("Then the user should see quantity to 4 and stock to 5", () => {
-      const expectedQuantityText = `Quantity: ${initialQuantity}`;
-      const expectedStockText = `Stock available: ${stock}`;
+      const quantityText = `Quantity: ${initialQuantity}`;
+      const stockText = `Stock available: ${stock}`;
 
       render(
         <ProductCard
@@ -37,11 +37,11 @@ describe("Given a ProductCard component", () => {
         />,
       );
 
-      const quantity = screen.getByText(expectedQuantityText);
-      const stockText = screen.getByText(expectedStockText);
+      const expectedQuantity = screen.getByText(quantityText);
+      const expectedStockText = screen.getByText(stockText);
 
-      expect(quantity).toBeVisible();
-      expect(stockText).toBeVisible();
+      expect(expectedQuantity).toBeVisible();
+      expect(expectedStockText).toBeVisible();
     });
 
     test("Then user should see a link to 'Detail Products'", () => {
@@ -132,20 +132,6 @@ describe("Given a ProductCard component", () => {
   describe("When it receives 0 quantity", () => {
     const initialEmptyQuantity = 0;
     const stock = 5;
-
-    test("Then user should see 'Sold Out'", () => {
-      render(
-        <ProductCard
-          initialQuantity={initialEmptyQuantity}
-          stock={stock}
-          productName={mockProductName}
-        />,
-      );
-
-      const soldOut = screen.getByText("Sold Out");
-
-      expect(soldOut).toBeVisible();
-    });
 
     test("Then user cannot click 'Reset' button", async () => {
       render(
