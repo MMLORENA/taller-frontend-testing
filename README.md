@@ -41,3 +41,7 @@ npm start
 - Kata 2: `npm run test:kata-2`
 - Kata 3: `npm run test:kata-3`
 - Kata 4: `npm run test:kata-4`
+
+## Presentación
+
+[Presentación](https://miro.com/app/board/uXjVKkNJKh4=/?share_link_id=560126333151)
