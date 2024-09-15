@@ -9,7 +9,7 @@ describe("Given a ProductCard component", () => {
     const initialQuantity = 4;
     const stock = 5;
 
-    test("Then user should see the product title", () => {
+    test("Then user should see 'Product name'", () => {
       render(
         <ProductCard
           initialQuantity={initialQuantity}
@@ -44,20 +44,6 @@ describe("Given a ProductCard component", () => {
       expect(stockText).toBeVisible();
     });
 
-    test("Then user should not see 'Sold Out'", () => {
-      render(
-        <ProductCard
-          initialQuantity={initialQuantity}
-          stock={stock}
-          productName={mockProductName}
-        />,
-      );
-
-      const soldOut = screen.queryByText(soldOutText);
-
-      expect(soldOut).not.toBeInTheDocument();
-    });
-
     test("Then user should see a link to 'Detail Products'", () => {
       render(
         <ProductCard
@@ -71,13 +57,32 @@ describe("Given a ProductCard component", () => {
 
       expect(link).toBeVisible();
     });
-  });
 
-  describe("When it receives 0 quantity", () => {
-    test("Then user cannot click 'Reset' button", async () => {
-      const initialQuantity = 0;
+    test("Then user should see the buttons 'Add' and 'Remove'", () => {
+      const productName = "Product";
+      const buttonAddText = "Add";
+      const buttonRemoveText = "Remove";
+      const initialQuantity = 4;
       const stock = 5;
 
+      render(
+        <ProductCard
+          initialQuantity={initialQuantity}
+          stock={stock}
+          productName={productName}
+        />,
+      );
+
+      const addButton = screen.getByRole("button", { name: buttonAddText });
+      const removeButton = screen.getByRole("button", {
+        name: buttonRemoveText,
+      });
+
+      expect(addButton).toBeVisible();
+      expect(removeButton).toBeVisible();
+    });
+
+    test("Then user should not see 'Sold Out'", () => {
       render(
         <ProductCard
           initialQuantity={initialQuantity}
@@ -86,9 +91,9 @@ describe("Given a ProductCard component", () => {
         />,
       );
 
-      const removeButton = screen.getByRole("button", { name: /Remove/i });
+      const soldOut = screen.queryByText(soldOutText);
 
-      expect(removeButton).toBeDisabled();
+      expect(soldOut).not.toBeInTheDocument();
     });
   });
 
@@ -121,6 +126,39 @@ describe("Given a ProductCard component", () => {
       const addButton = screen.getByRole("button", { name: /Add/i });
 
       expect(addButton).toBeDisabled();
+    });
+  });
+
+  describe("When it receives 0 quantity", () => {
+    const initialEmptyQuantity = 0;
+    const stock = 5;
+
+    test("Then user should see 'Sold Out'", () => {
+      render(
+        <ProductCard
+          initialQuantity={initialEmptyQuantity}
+          stock={stock}
+          productName={mockProductName}
+        />,
+      );
+
+      const soldOut = screen.getByText("Sold Out");
+
+      expect(soldOut).toBeVisible();
+    });
+
+    test("Then user cannot click 'Reset' button", async () => {
+      render(
+        <ProductCard
+          initialQuantity={initialEmptyQuantity}
+          stock={stock}
+          productName={mockProductName}
+        />,
+      );
+
+      const removeButton = screen.getByRole("button", { name: /Remove/i });
+
+      expect(removeButton).toBeDisabled();
     });
   });
 });
