@@ -10,11 +10,9 @@ describe("Given a DropdownComponent", () => {
       render(<DropdownComponent />);
 
       const button = screen.getByRole("button", { name: defaultButtonText });
-
       fireEvent.click(button);
 
       const select = screen.getByRole("combobox");
-
       fireEvent.change(select, { target: { value: firstOption } });
 
       const selectedOption = screen.getByRole("button", {
