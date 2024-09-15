@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { ProductCard } from "../kata-1/ProductCard/ProductCard.tsx";
+import { userEvent } from "@testing-library/user-event";
 
 describe("Given a ProductCard component", () => {
   const mockProductName = "Product";
@@ -70,6 +71,29 @@ describe("Given a ProductCard component", () => {
       const link = screen.getByRole("link", { name: /Product Detail/i });
 
       expect(link).toBeVisible();
+    });
+
+    describe("And the user clicks on the 'Add' button", () => {
+      test("Then the user should see the quantity increase by 1", async () => {
+        const user = userEvent.setup();
+        const expectedQuantityText = `Quantity: ${initialQuantity + 1}`;
+        const addButtonText = /Add/i;
+
+        render(
+          <ProductCard
+            initialQuantity={initialQuantity}
+            stock={stock}
+            productName={mockProductName}
+          />,
+        );
+
+        const addButton = screen.getByRole("button", { name: addButtonText });
+        await user.click(addButton);
+
+        const quantity = screen.getByText(expectedQuantityText);
+
+        expect(quantity).toBeVisible();
+      });
     });
   });
 
