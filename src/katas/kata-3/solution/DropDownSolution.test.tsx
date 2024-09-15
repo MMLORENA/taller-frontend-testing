@@ -4,7 +4,7 @@ import { userEvent } from "@testing-library/user-event";
 
 describe("Given a DropdownComponent", () => {
   describe("When the user selects an option", () => {
-    test("Then user should see the button with the selected option", async () => {
+    test("Then user should see only the button with the selected option", async () => {
       const user = userEvent.setup();
       const firstOption = "Option 1";
       const defaultButtonText = "Select an option";
@@ -23,8 +23,8 @@ describe("Given a DropdownComponent", () => {
 
       const selectAfterSelectOption = screen.queryByRole("combobox");
 
-      expect(selectAfterSelectOption).not.toBeInTheDocument();
       expect(selectedOption).toBeVisible();
+      expect(selectAfterSelectOption).not.toBeInTheDocument();
     });
   });
 });
