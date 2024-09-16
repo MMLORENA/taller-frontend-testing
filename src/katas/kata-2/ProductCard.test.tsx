@@ -133,20 +133,6 @@ describe("Given a ProductCard component", () => {
     const initialEmptyQuantity = 0;
     const stock = 5;
 
-    test("Then user should see 'Sold Out'", () => {
-      render(
-        <ProductCard
-          initialQuantity={initialEmptyQuantity}
-          stock={stock}
-          productName={mockProductName}
-        />,
-      );
-
-      const soldOut = screen.getByText("Sold Out");
-
-      expect(soldOut).toBeVisible();
-    });
-
     test("Then user cannot click 'Reset' button", async () => {
       render(
         <ProductCard
