@@ -2,10 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { ProductCard } from "../ProductCard/ProductCard.tsx";
 
 describe("Given a ProductCard component", () => {
-  const mockProductName = "Pulpo a la Gallega";
+  const productNameText = "Pulpo a la Gallega";
   const soldOutText = /Sold out/i;
 
-  describe("When it receives 'Product Name 1', quantity 4 and stock 5 ", () => {
+  describe("When it receives 'Pulpo a la Gallega', quantity 4 and stock 5 ", () => {
     const initialQuantity = 4;
     const stock = 5;
 
@@ -14,12 +14,12 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={initialQuantity}
           stock={stock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
       const productName = screen.getByRole("heading", {
-        name: "Product",
+        name: productNameText,
       });
 
       expect(productName).toBeVisible();
@@ -33,7 +33,7 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={initialQuantity}
           stock={stock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
@@ -49,7 +49,7 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={initialQuantity}
           stock={stock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
@@ -87,7 +87,7 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={initialQuantity}
           stock={stock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
@@ -97,7 +97,7 @@ describe("Given a ProductCard component", () => {
     });
   });
 
-  describe("When stock is empty", () => {
+  describe("When it receives an empty stock", () => {
     const emptyStock = 0;
 
     test("Then user should see 'Sold Out'", () => {
@@ -105,7 +105,7 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={0}
           stock={emptyStock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
@@ -114,12 +114,12 @@ describe("Given a ProductCard component", () => {
       expect(soldOut).toBeVisible();
     });
 
-    test("Then user should not click 'Add' button", async () => {
+    test("Then user should see a disabled 'Add' button", async () => {
       render(
         <ProductCard
           initialQuantity={0}
           stock={emptyStock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
@@ -138,7 +138,7 @@ describe("Given a ProductCard component", () => {
         <ProductCard
           initialQuantity={initialEmptyQuantity}
           stock={stock}
-          productName={mockProductName}
+          productName={productNameText}
         />,
       );
 
